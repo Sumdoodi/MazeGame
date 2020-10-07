@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
+using TMPro;
 
 public class CheckpointPlugin : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class CheckpointPlugin : MonoBehaviour
     private static extern int GetNumCheckpoints();
 
     float lastTime = 0.0f;
+    int numScore = 0;
+    Vector3 lastCheckpoint = new Vector3(0.0f, 0.0f, 0.0f);
+    public GameObject textMeshPro;
     
     public void SaveTimeTest(float checkpointTime)
     {
@@ -55,17 +59,24 @@ public class CheckpointPlugin : MonoBehaviour
     void Start()
     {
         lastTime = Time.time;
+        lastCheckpoint = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        if (transform.position != lastCheckpoint)
         {
             float currentTime = Time.time;
             float checkpointTime = currentTime - lastTime;
             lastTime = currentTime;
+            int tempScore = 100 - Mathf.RoundToInt(checkpointTime);
+            if(tempScore <= 0)
+            {
+                tempScore = 0;
+            }
 
+            numScore += tempScore;
             SaveTimeTest(checkpointTime);
         }
 
@@ -81,10 +92,13 @@ public class CheckpointPlugin : MonoBehaviour
         {
             Debug.Log(LoadTotalTimeTest());
         }
+
+        textMeshPro.GetComponent<TMP_Text>().SetText("Score: " + numScore.ToString());
+        lastCheckpoint = transform.position;
     }
 
     private void OnDestroy()
     {
-        ResetLoggerTest();
+        //ResetLoggerTest();
     }
 }
