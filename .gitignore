@@ -58,3 +58,15 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+
+Maze Game/UserSettings/
+
+Maze Game/ProjectSettings/
+
+Maze Game/Library/
+
+Maze Game/Logs/
+
+Maze Game/obj/
+
+Maze Game/Packages/
