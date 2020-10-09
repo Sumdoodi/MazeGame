@@ -9,11 +9,16 @@ public class StartScript : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(1); //Transitions to play scene
-        checkpointLogger.GetComponent<CheckpointPlugin>().ResetLoggerTest();
+        checkpointLogger.GetComponent<CheckpointPlugin>().ResetLoggerTest(); //Resets stats
     }
 
     public void StatsScreen()
     {
         SceneManager.LoadScene(2); //Transitions to end scene
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0); // Transition to start scene
     }
 }

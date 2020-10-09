@@ -20,6 +20,7 @@ public class MoveScript : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundMask;
     public CharacterController controller;
+    public GameObject button;
 
     bool cursorState = true; //Locked = true, None = false
 
@@ -87,10 +88,12 @@ public class MoveScript : MonoBehaviour
     public void HideCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        button.SetActive(false);
     }
 
     public void ShowCursor()
     {
         Cursor.lockState = CursorLockMode.None;
+        button.SetActive(true);
     }
 }
