@@ -8,8 +8,8 @@ public class StartScript : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(1); //Transitions to play scene
         checkpointLogger.GetComponent<CheckpointPlugin>().ResetLoggerTest(); //Resets stats
+        SceneManager.LoadScene(1); //Transitions to play scene
     }
 
     public void StatsScreen()
@@ -20,5 +20,10 @@ public class StartScript : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0); // Transition to start scene
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
     }
 }

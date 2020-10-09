@@ -9,7 +9,8 @@ public class TextCheckpoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this.gameObject.active == true)
+        //Displays checkpoint reached screen and hides it after 1.5 seconds
+        if(this.gameObject.activeSelf == true)
         {
             time += Time.deltaTime;
 
@@ -19,7 +20,7 @@ public class TextCheckpoint : MonoBehaviour
             }
         }
 
-        if(this.gameObject.active == false)
+        if(this.gameObject.activeSelf == false)
         {
             time = 0.0f;
         }

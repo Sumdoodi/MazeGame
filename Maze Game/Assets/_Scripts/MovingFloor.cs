@@ -6,38 +6,25 @@ public class MovingFloor : MonoBehaviour
 {
 
     public GameObject player;
-    public Transform groundCheck;
-    public LayerMask groundMask;
-    public float groundDistance = 0.4f;
-
     public Vector3 startPos;
     public Vector3 endPos;
-
     public float speed = 5.0f;
     public int axis;
 
     Vector3 move;
-    bool isOnPlatform = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     void Update()
     {
-        isOnPlatform = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (axis == 1)
+        if (axis == 1) //X
         {
             positionCheck(this.transform.position.x, endPos.x, startPos.x, ref move.x);
         }
-        else if(axis == 2)
+        else if(axis == 2) //Y
         {
             positionCheck(this.transform.position.y, endPos.y, startPos.y, ref move.y);
         }
-        else if(axis == 3)
+        else if(axis == 3) //Z
         {
             positionCheck(this.transform.position.z, endPos.z, startPos.z, ref move.z);
         }
@@ -47,6 +34,7 @@ public class MovingFloor : MonoBehaviour
 
     private void positionCheck(float pos, float end, float start, ref float move)
     {
+        //Generates either x,y,z for the move vector
         if(pos <= end)
         {
             move = 1;
@@ -59,6 +47,7 @@ public class MovingFloor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Moves player with platform
         if (other.gameObject.name == "Player")
         {
             Debug.Log(move);

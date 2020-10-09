@@ -10,8 +10,7 @@ public class VoidCol : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Dead");
-
+        //Teleports player to last checkpoint on contact with the death plane/void
         if(other.gameObject.name == "Player")
         {
             player.GetComponent<CharacterController>().enabled = false;

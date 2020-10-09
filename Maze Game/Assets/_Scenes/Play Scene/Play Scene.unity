@@ -2683,7 +2683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -19.62
-  mouseSpeed: 500
+  mouseSpeed: 200
   moveSpeed: 7
   groundDistance: 0.4
   jumpHeight: 3
@@ -3040,6 +3040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpoint: {fileID: 1895896660}
   text: {fileID: 204871052}
+  textMeshProUI: {fileID: 1640162617}
 --- !u!135 &229382600
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4976,7 +4977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a74eb2c86081fa4c8dd18b74b719abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointLogger: {fileID: 0}
+  checkpointLogger: {fileID: 1895896660}
 --- !u!4 &377901108
 Transform:
   m_ObjectHideFlags: 0
@@ -6873,6 +6874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpoint: {fileID: 1895896660}
   text: {fileID: 204871052}
+  textMeshProUI: {fileID: 1640162617}
 --- !u!135 &538236052
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12420,6 +12422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpoint: {fileID: 1895896660}
   text: {fileID: 204871052}
+  textMeshProUI: {fileID: 1640162617}
 --- !u!135 &1164314878
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16567,9 +16570,9 @@ RectTransform:
   m_Father: {fileID: 387704536}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460, y: 224}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 128, y: -42}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1640162619
@@ -17191,6 +17194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpoint: {fileID: 1895896660}
   text: {fileID: 204871052}
+  textMeshProUI: {fileID: 1640162617}
 --- !u!135 &1680669156
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18667,6 +18671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpoint: {fileID: 1895896660}
   text: {fileID: 204871052}
+  textMeshProUI: {fileID: 1640162617}
 --- !u!135 &1816687483
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19508,6 +19513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpoint: {fileID: 1895896660}
   text: {fileID: 204871052}
+  textMeshProUI: {fileID: 1640162617}
 --- !u!135 &1890043032
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19578,7 +19584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308d7ed850ee30741a58aa16f237d6eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 1640162617}
+  textMeshProUI: {fileID: 1640162617}
 --- !u!1001 &1900221911
 PrefabInstance:
   m_ObjectHideFlags: 0

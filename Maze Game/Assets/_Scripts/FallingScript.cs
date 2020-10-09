@@ -23,6 +23,7 @@ public class FallingScript : MonoBehaviour
     {
         if(falling == true)
         {
+            //Causes block to fall
             block.transform.position -= new Vector3(0.0f, fallSpeed * Time.deltaTime, 0.0f);
             if(block.transform.position.y <= 1.0f)
             {
@@ -32,6 +33,7 @@ public class FallingScript : MonoBehaviour
         }
         else if (rising == true)
         {
+            //Raises the block to initial position
             block.transform.position += new Vector3(0.0f, riseSpeed * Time.deltaTime, 0.0f);
             if(block.transform.position.y >= startPos.y)
             {
@@ -42,6 +44,7 @@ public class FallingScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Sets block to fall if it is not in a rising state
         if (rising == false)
         {
             falling = true;

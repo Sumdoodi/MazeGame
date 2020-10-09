@@ -33,15 +33,16 @@ public class MoveScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         isOnGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         
+        //Stops you from gaining downward velocity when on ground
         if(isOnGround && velocity.y < 0.0f)
         {
             velocity.y = -2.0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        //Toggles cursor state
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             cursorState = !cursorState;
 
@@ -55,6 +56,7 @@ public class MoveScript : MonoBehaviour
             }
         }
 
+        //Moves the character (rotation, translation)
         if (Cursor.lockState == CursorLockMode.Locked)
         {
             mouseX = Input.GetAxis("Mouse X") * mouseSpeed * Time.deltaTime;
@@ -75,12 +77,14 @@ public class MoveScript : MonoBehaviour
 
             controller.Move(move * moveSpeed * Time.deltaTime);
 
+            //Adds upwards velocity to allow a jump
             if(Input.GetButtonDown("Jump") && isOnGround)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
             }
         }
 
+        //Moves player using character controller component
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
